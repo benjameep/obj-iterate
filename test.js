@@ -1,9 +1,9 @@
-var vy = require('./main')
+var oi = require('./main')
 var assert = require('assert')
 
 function testFunc(test,subject){
     let i = 0,keys=Object.keys(subject)
-    let result = vy(subject)[test.name]((n,k,a) => {
+    let result = oi(subject)[test.name]((n,k,a) => {
         assert.equal(keys[i],k,`${test.name}: incorrect key value`)
         assert.equal(subject[keys[i]],n,`${test.name}: incorrect element value`)
         assert.deepEqual(a,subject,`${test.name}: incorrect obj passed`)
@@ -65,7 +65,7 @@ function testReduceFunc(test,subject){
     if(test.acm !== undefined){
         args.push(test.acm)
     }
-    let result = vy(subject)[test.name](...args)
+    let result = oi(subject)[test.name](...args)
     assert.deepEqual(result,test.result)
 }
 
