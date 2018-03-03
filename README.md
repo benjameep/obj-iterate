@@ -7,8 +7,7 @@ var vy = require('vy')
 var obj = {a:1,b:2,c:3}
 
 /* Mess with the values directly without having to mess with Object.keys() */
-vy(obj).map(n => n+1)
-// => {a:2,b:3,c:4}
+vy(obj).map(n => n+1) // => {a:2,b:3,c:4}
 
 /* Isn't this so much cleaner */
 vy(obj).filter(n => n >= 2) // => {b:2,c:3}
